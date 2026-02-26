@@ -1,0 +1,51 @@
+{:deps {x/y {:local/root "."}
+        org.babashka/cli {:mvn/version "0.2.23"}
+        io.github.borkdude/quickblog
+        {:git/sha "d2aa3eb41490618045192072b58e39b1b9f9b319"}
+        }
+ :tasks
+ {:requires ([babashka.cli :as cli]
+             [quickblog.cli :as qbc]
+             [babashka.fs :as fs]
+             [selmer.parser :as selmer])
+  :init (do
+          (def cli-opts
+            (cli/parse-opts *command-line-args*
+                            {:coerce {:port :int :headers :edn}}))
+          (def qbc-opts {:blog-title "tad.web docs"
+                         :blog-description "quickly static site generation"
+                         :num-index-posts 1
+                         :posts-dir "c/qb/posts"
+                         :assets-dir "c/qb/assets"
+                         :templates-dir "c/qb/tmpl"
+                         :out-dir "blog"})
+          (selmer/set-resource-path! (-> "c/tmpl" fs/file .getAbsolutePath))
+          )
+  quickblog {:doc "Start blogging quickly! Run `bb quickblog help` for details."
+             :task (qbc/dispatch qbc-opts)}
+
+  serve {:doc "Serve static assets"
+         :requires ([babashka.http-server :as server])
+         :task (server/exec (merge {:port 8090
+                                    :dir "."}
+                                   cli-opts))}
+
+  prn {:task (clojure "-X clojure.core/prn" cli-opts)}
+
+  browser-nrepl {:doc "Start browser nREPL"
+		 :requires ([sci.nrepl.browser-server :as bp])
+		 :task (bp/start! {})}
+
+  -dev {:depends [prn serve browser-nrepl]}
+
+  dev {:task (run '-dev {:parallel true})}
+  
+  serv {:doc "svn.edn server"
+        :requires ([integrant.core :as ig]
+                   [tad.web.handler]
+                   [tad.web.svc])
+        :task (let [config (ig/read-string (slurp "svc.edn"))]
+                (ig/init config)
+                (deref (promise)))
+        }
+  }}

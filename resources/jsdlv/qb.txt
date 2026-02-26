@@ -1,0 +1,17 @@
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/prism.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/keep-markup/prism-keep-markup.min.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-bash.min.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-clojure.min.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-json.min.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-groovy.min.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-ini.min.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-markup.min.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-markdown.min.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-mermaid.min.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-sql.min.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-toml.min.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-yaml.min.js
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism.min.css
+https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-dark.css
+https://cdn.jsdelivr.net/npm/prism-theme-github@1.0.2/themes/prism-theme-github-dark.css
+https://cdn.jsdelivr.net/npm/prism-theme-github@1.0.2/themes/prism-theme-github-light.min.css

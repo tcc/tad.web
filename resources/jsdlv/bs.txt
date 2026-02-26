@@ -1,0 +1,7 @@
+https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css
+https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css
+https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/fonts/bootstrap-icons.woff2
+https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js
+https://getbootstrap.com/docs/5.3/assets/js/color-modes.js
+https://getbootstrap.com/docs/5.3/assets/_slug_.CJzlHdSW.css
+https://getbootstrap.com/docs/5.3/assets/Scripts.astro_astro_type_script_index_0_lang.B072HICR.js

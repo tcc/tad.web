@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block header %}
+
+{% include "/inc/head.html" %}
+
+{% endblock %}
+
+{% block content %}
+<div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+
+{% include "/inc/sidebar_0.html" %}
+
+<main class="bd-main order-1">
+
+<div class="bd-intro pt-0 ps-lg-0">
+
+{% include "/inc/breadc.html" %}
+
+  <h1>home</h1>
+</div>
+
+
+{% include "/inc/toc_0.html" %}
+
+
+<div class="bd-content ps-lg-2">
+
+<h2 id="quick-start">快速入門 <a class="anchor-link" href="#quick-start" aria-label="連結到此區段：快速入門"></a></h2>
+<p>透過 CDN 加入 Bootstrap 的生產就緒 CSS 和 JavaScript，無需任何建置步驟即可開始使用。在這個 <a href="https://codepen.io/team/bootstrap/pen/qBamdLj">Bootstrap CodePen 示範</a> 中實際操作看看。</p>
+<br>
+<ol>
+<li>
+<p><strong>在專案根目錄中建立一個新的 <code>index.html</code> 檔案。</strong>也加入 <code>&lt;meta name="viewport"&gt;</code> 標籤，以在行動裝置中獲得 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag">適當的回應行為</a>。</p>
+<div class="bd-code-snippet">  <div class="bd-clipboard">    <button type="button" class="btn-clipboard">      <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>    </button>  </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Bootstrap demo<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, world!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div></div></li>
+<li>
+<p><strong>包含 Bootstrap 的 CSS 和 JS。</strong>將 <code>&lt;link&gt;</code> 標籤放入 <code>&lt;head&gt;</code> 中以取得我們的 CSS，並將 <code>&lt;script&gt;</code> 標籤放入我們的 JavaScript 程式集（包含用於定位下拉式選單、彈出視窗和工具提示的 Popper）中，並置於 <code>&lt;/body&gt;</code> 之前。進一步了解我們的 <a href="#cdn-links">CDN 連結</a>。</p>
+<div class="bd-code-snippet">  <div class="bd-clipboard">    <button type="button" class="btn-clipboard">      <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>    </button>  </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Bootstrap demo<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">integrity</span><span class="o">=</span><span class="s">"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, world!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"</span> <span class="na">integrity</span><span class="o">=</span><span class="s">"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div></div><p>您也可以分別包含 <a href="https://popper.js.org/">Popper</a> 和我們的 JS。如果您不打算使用下拉式選單、彈出視窗或工具提示，請透過不包含 Popper 來節省一些 KB。</p>
+<div class="bd-code-snippet">  <div class="bd-clipboard">    <button type="button" class="btn-clipboard">      <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>    </button>  </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"</span> <span class="na">integrity</span><span class="o">=</span><span class="s">"sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"</span> <span class="na">integrity</span><span class="o">=</span><span class="s">"sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div></div></li>
+<li>
+<p><strong>哈囉，世界！</strong>在您選擇的瀏覽器中開啟頁面，以查看您的 Bootstrapped 頁面。現在，您可以透過建立自己的 <a href="/docs/5.3/layout/grid/">版面</a>、加入數十個 <a href="/docs/5.3/components/buttons/">元件</a>，並使用 <a href="/docs/5.3/examples/">我們的官方範例</a>，開始使用 Bootstrap 建置。</p>
+</li>
+</ol>
+<h2 id="cdn-links">CDN 連結 <a class="anchor-link" href="#cdn-links" aria-label="連結到此區段：CDN 連結"></a></h2>
+<p>作為參考，以下是我們的 CDN 主要連結。</p>
+<div class="table-responsive"><table class="table">
+<thead>
+<tr>
+<th>說明</th>
+<th>網址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CSS</td>
+<td><code>https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css</code></td>
+</tr>
+<tr>
+<td>JS</td>
+<td><code>https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js</code></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>您也可以使用 CDN 來擷取 <a href="/docs/5.3/getting-started/contents/">內容頁面中列出的任何其他組建</a>。</p>
+
+<h2 id="next-steps">後續步驟 <a class="anchor-link" href="#next-steps" aria-label="連結到此區段：後續步驟"></a></h2>
+<ul>
+<li>進一步了解 Bootstrap 使用的一些 <a href="#important-globals">重要的全域環境設定</a>。</li>
+<li>在我們的 <a href="/docs/5.3/getting-started/contents/">內容區段</a> 中閱讀 Bootstrap 中包含的內容，以及下方 <a href="#js-components">需要 JavaScript 的元件</a> 清單。</li>
+<li>需要更多功能嗎？考慮透過 <a href="/docs/5.3/getting-started/download/#package-managers">套件管理員包含原始檔案</a>來使用 Bootstrap 建置。</li>
+<li>想將 Bootstrap 當成模組使用 <code>&lt;script type="module"&gt;</code>？請參閱我們的 <a href="/docs/5.3/getting-started/javascript/#using-bootstrap-as-a-module">使用 Bootstrap 當成模組</a> 區段。</li>
+</ul>
+<h2 id="js-components">JS 組件 <a class="anchor-link" href="#js-components" aria-label="連結到此區段：JS 組件"></a></h2>
+<p>好奇哪些組件明確需要我們的 JavaScript 和 Popper？如果您對一般頁面結構完全不確定，請繼續閱讀範例頁面範本。</p>
+<ul>
+<li>用於關閉的快訊</li>
+<li>用於切換狀態和核取方塊/單選按鈕功能的按鈕</li>
+<li>用於所有投影片行為、控制項和指標的輪播</li>
+<li>用於切換內容可見度的折疊</li>
+<li>用於顯示和定位的下拉選單（也需要 <a href="https://popper.js.org/">Popper</a>）</li>
+<li>用於顯示、定位和捲動行為的模態視窗</li>
+<li>用於延伸我們的折疊和離畫布外掛程式以實作回應式行為的導覽列</li>
+<li>具備切換內容窗格的標籤外掛程式的導覽</li>
+<li>用於顯示、定位和捲動行為的離畫布</li>
+<li>用於捲動行為和導覽更新的捲動偵測</li>
+<li>用於顯示和關閉的提示</li>
+<li>用於顯示和定位的工具提示和浮動提示（也需要 <a href="https://popper.js.org/">Popper</a>）</li>
+</ul>
+<h2 id="important-globals">重要的全域 <a class="anchor-link" href="#important-globals" aria-label="連結到此區段：重要的全域"></a></h2>
+<p>Bootstrap 使用少數重要的全域樣式和設定，這些幾乎都專門用於<em>標準化</em>跨瀏覽器樣式。我們深入探討一下。</p>
+<h3 id="html5-doctype">HTML5 文件類型 <a class="anchor-link" href="#html5-doctype" aria-label="連結到此區段：HTML5 文件類型"></a></h3>
+<p>Bootstrap 需要使用 HTML5 文件類型。沒有它，您會看到一些時髦且不完整的樣式。</p>
+<div class="bd-code-snippet">  <div class="bd-clipboard">    <button type="button" class="btn-clipboard">      <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>    </button>  </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  ...
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div></div><h3 id="viewport-meta">視窗 meta <a class="anchor-link" href="#viewport-meta" aria-label="連結到此區段：視窗 meta"></a></h3>
+<p>Bootstrap 採用<em>行動裝置優先</em>的開發方式，此策略是先針對行動裝置最佳化程式碼，再使用 CSS 媒體查詢視需要擴大元件。若要確保所有裝置都能正確呈現和觸控縮放，請將回應式視窗標籤加入您的 <code>&lt;head&gt;</code>。</p>
+<div class="bd-code-snippet">  <div class="bd-clipboard">    <button type="button" class="btn-clipboard">      <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>    </button>  </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="p">&gt;</span>
+</span></span></code></pre></div></div><p>您可以在 <a href="#quick-start">快速入門</a> 中看到此範例實際運作。</p>
+<h3 id="box-sizing">框大小 <a class="anchor-link" href="#box-sizing" aria-label="連結至此區段：框大小"></a></h3>
+<p>為了在 CSS 中進行更直接的調整大小，我們將全域 <code>box-sizing</code> 值從 <code>content-box</code> 切換為 <code>border-box</code>。這可確保 <code>padding</code> 不會影響元素最終計算出的寬度，但可能會導致部分第三方軟體（例如 Google 地圖和 Google 自訂搜尋引擎）出現問題。</p>
+<p>在極少數需要覆寫的情況下，請使用類似以下的程式碼</p>
+<div class="bd-code-snippet">  <div class="bd-clipboard">    <button type="button" class="btn-clipboard">      <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>    </button>  </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">selector-for-some-widget</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">content-box</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div><p>使用上述程式碼片段，巢狀元素（包括透過 <code>::before</code> 和 <code>::after</code> 產生的內容）都將繼承 <code>.selector-for-some-widget</code> 指定的 <code>box-sizing</code>。</p>
+<p>在 <a href="https://css-tricks.com/box-sizing/">CSS Tricks</a> 瞭解更多關於框模型和調整大小的資訊。</p>
+<h3 id="reboot">重新啟動 <a class="anchor-link" href="#reboot" aria-label="連結至此區段：重新啟動"></a></h3>
+<p>為了改善跨瀏覽器呈現，我們使用 <a href="/docs/5.3/content/reboot/">重新啟動</a> 修正瀏覽器和裝置間的不一致性，同時對常見 HTML 元素提供更具觀點的重設。</p>
+<h2 id="community">社群 <a class="anchor-link" href="#community" aria-label="連結至此區段：社群"></a></h2>
+<p>透過這些有用的資源，隨時掌握 Bootstrap 的開發進度，並與社群聯繫。</p>
+<ul>
+<li>閱讀並訂閱 <a href="https://blog.getbootstrap.com/">官方 Bootstrap 部落格</a>。</li>
+<li>在 <a href="https://github.com/twbs/bootstrap/discussions">我們的 GitHub 討論區</a> 發問並探索。</li>
+<li>在 <a href="https://discord.gg/bZUvakRU3M">社群 Discord</a> 或 <a href="https://reddit.com/r/bootstrap">Bootstrap subreddit</a> 上討論、發問等。</li>
+<li>在 IRC 與其他 Bootstrappers 聊天。在 <code>irc.libera.chat</code> 伺服器，在 <code>#bootstrap</code> 頻道。</li>
+<li>實作協助可在 Stack Overflow（標籤 <a href="https://stackoverflow.com/questions/tagged/bootstrap-5"><code>bootstrap-5</code></a>）中找到。</li>
+<li>開發人員應在透過 <a href="https://www.npmjs.com/search?q=keywords:bootstrap">npm</a> 或類似傳送機制散布時，使用關鍵字 <code>bootstrap</code> 在修改或新增 Bootstrap 功能的套件上，以獲得最大的可發現性。</li>
+</ul>
+<p>您也可以追蹤 <a href="https://twitter.com/getbootstrap">@getbootstrap on Twitter</a> 以獲得最新八卦和精采音樂影片。</p>
+
+
+
+</div> <!--bd-content -->
+
+</main>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+{% include "/inc/foot.html" %}
+
+{% endblock %}
+

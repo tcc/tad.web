@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/w/bs/css/bootstrap.min.css" rel="stylesheet">
+<link href="/w/bs/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="/w/bs/assets/docs.css" rel="stylesheet">
+<link rel="stylesheet" href="/w/react/primeicons.css" />
+
+<link rel="stylesheet" href="/w/react/primeicons.css" />
+<link rel="stylesheet" href="/w/react/resources/themes/md-dark-indigo/theme.css" />
+<link rel="stylesheet" href="/w/react/primeflex.min.css" />
+
+<script src="/w/qb/prism.js"></script>
+<script src="/w/qb/components/prism-bash.min.js"></script>
+<script src="/w/qb/components/prism-clojure.min.js"></script>
+<script src="/w/qb/components/prism-groovy.min.js"></script>
+<script src="/w/qb/components/prism-ini.min.js"></script>
+<script src="/w/qb/components/prism-json.min.js"></script>
+<script src="/w/qb/components/prism-markdown.min.js"></script>
+<script src="/w/qb/components/prism-markup.min.js"></script>
+<script src="/w/qb/components/prism-mermaid.min.js"></script>
+<script src="/w/qb/components/prism-sql.min.js"></script>
+<script src="/w/qb/components/prism-toml.min.js"></script>
+<script src="/w/qb/components/prism-yaml.min.js"></script>
+<link rel="stylesheet" href="/w/qb/themes/prism.min.css">
+<link rel="stylesheet" href="/w/qb/themes/prism-theme-github-light.min.css">
+
+<link rel="stylesheet" href="/c/web/tad.css" />
+</head>
+<body data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-theme="dark">
+<script src="/w/bs/js/bootstrap.bundle.min.js"></script>
+<script src="/w/bs/assets/js/color-modes.js"></script>
+<script src="/w/bs/assets/docs.min.js"></script>
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<hr/>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+<script>
+let curr = window.location.href;
+document.querySelectorAll('.nav-link').forEach(nav => {
+//    console.log(nav.href);
+    nav.classList.remove('active');
+    if (nav.href==curr) nav.classList.add('active');
+});
+
+
+//const o=document.querySelectorAll(".bd-example-offcanvas .offcanvas");
+//o&&o.forEach(e=>{e.addEventListener("show.bs.offcanvas",e=>{e.preventDefault()},!1)})
+
+document.querySelectorAll('#nav-tab>[data-bs-toggle="tab"]').forEach(el => {
+  el.addEventListener('shown.bs.tab', () => {
+    const target = el.getAttribute('data-bs-target')
+    const scrollElem = document.querySelector(`${target} [data-bs-spy="scroll"]`)
+    bootstrap.ScrollSpy.getOrCreateInstance(scrollElem).refresh()
+  })
+});
+
+</script>
+
+</body>
+</html>

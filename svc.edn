@@ -1,0 +1,22 @@
+{:tad.web/server {:port 8888
+                  :handler #ig/ref :tad.web/router
+                  :start "/"
+                  }
+ :tad.web/router
+ {:routes [{:path "/hello"
+            :method :get
+            :response #ig/ref :tad.web.handle/hello}
+           {:path "/c/tmpl/:file"
+            :method :get
+            :response #ig/ref :tad.web.handle/tmpl}
+           {:path "/:file*"
+            :method :get
+            :response #ig/ref [:tad/fsc :tad.web.handle/fs]}
+           ]
+  }
+ :tad.web.handle/hello {}
+ :tad/pwd {}
+ :tad.web/kvs {}
+ :tad.web.handle/tmpl {:dir #ig/ref :tad/pwd :rel "c/tmpl"}
+ [:tad/fsc :tad.web.handle/fs] {:dir #ig/ref :tad/pwd :idx false :kvs #ig/ref :tad.web/kvs}
+ }

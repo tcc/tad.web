@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--script async src="/www/cm/es-module-shims.js"></script-->
+
+<link href="/w/bs/css/bootstrap.min.css" rel="stylesheet">
+<link href="/w/bs/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="/w/bs/assets/docs.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/w/react/primeicons.css" />
+<link rel="stylesheet" href="/w/react/resources/themes/md-dark-indigo/theme.css" />
+<link rel="stylesheet" href="/w/react/primeflex.min.css" />
+
+<script src="/w/scittle/scittle.min.js"></script>
+<script>scittle.core.disable_auto_eval();</script>
+<script src="/w/react/react.production.min.js"></script>
+<script src="/w/react/react-dom.production.min.js"></script>
+<!--
+<script src="/w/react/react.development.js"></script>
+<script src="/w/react/react-dom.development.js"></script>
+-->
+<script src="/w/scittle/scittle.reagent.min.js"></script>
+<script src="/w/scittle/scittle.re-frame.min.js"></script>
+<script src="/w/scittle/scittle.promesa.min.js"></script>
+<script src="/w/scittle/scittle.cljs-ajax.min.js"></script>
+
+<script src="/w/react/react-transition-group.min.js"></script>
+<script src="/w/react/primereact.all.min.js"></script>
+
+
+<!--style>
+@media (min-width: 992px) {
+    .bd-layout {
+        display:grid;
+        grid-template-areas: "sidebar main";
+        grid-template-columns: 1fr 5fr;
+        gap: 1.5rem
+    }
+}
+</style-->
+
+<style>
+.p-tree {
+    padding: 0;
+    border: 0px solid blue;
+    background-color: transparent;
+    font-size: 0.8rem;
+}
+.p-tree-container {
+    padding-left: 0;
+}
+.p-treenode {
+    padding: 0;
+}
+
+.p-tree .p-tree-container .p-treenode .p-treenode-content {
+    padding: 0;
+}
+
+ol, ul {
+    padding-left: 0; /*0.9rem;*/
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+}
+
+.p-breadcrumb .p-menuitem-link {
+    padding: 0;
+}
+
+/*
+.p-breadcrumb-list {
+    margin-bottom: 0;
+}
+*/
+</style>
+
+<script type="importmap">
+  {
+	"imports": {
+	  "codemirror": "/w/cm/index.js",
+	  "@codemirror/commands": "/w/cm/commands@6.10.2/index.js",
+	  "@codemirror/search": "/w/cm/search@6.6.0/index.js",
+	  "@codemirror/autocomplete": "/w/cm/autocomplete@6.20.0/index.js",
+	  "@codemirror/lint": "/w/cm/lint@6.9.3/index.js",
+	  "@codemirror/theme-one-dark": "/w/cm/theme-one-dark@6.1.3/index.js",
+	  "crelt": "/w/crelt@1.0.6/index.min.js",
+	  "@nextjournal/lang-clojure": "/w/cm/lang-clojure@1.0.0/index.min.js",
+	  "@nextjournal/lezer-clojure": "/w/cm/lezer-clojure@1.0.0/index.es.min.js",
+	  "@lezer/highlight": "/w/cm/highlight@1.2.3/index.js",
+	  "@lezer/lr": "/w/cm/lr@1.4.8/index.js",
+	  "@lezer/common": "/w/cm/common@1.5.1/index.js",
+	  "@codemirror/language": "/w/cm/language@6.12.1/index.js",
+	  "@marijn/find-cluster-break": "/w/cm/find-cluster-break@1.0.2/index.js",
+	  "@codemirror/state": "/w/cm/state@6.5.4/index.js",
+	  "@codemirror/view": "/w/cm/view@6.39.13/index.js",
+	  "style-mod": "/w/style-mod@4.1.3/style-mod.js",
+	  "w3c-keyname": "/w/w3c-keyname@2.2.8/index.js"
+	}
+  }
+</script>
+<script type="module" type="application/javascript">
+  import * as cm from 'codemirror';
+  import * as lc from '@nextjournal/lang-clojure'
+  import * as cv from '@codemirror/view';
+  import * as cs from '@codemirror/state';
+  import * as od from '@codemirror/theme-one-dark';
+  globalThis.cm = cm;
+  globalThis.lc = lc;
+  globalThis.cv = cv;
+  globalThis.cs = cs;
+  globalThis.od = od;
+  scittle.core.eval_script_tags();
+</script>
+
+</head>
+<body data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-theme="dark">
+<script src="/w/bs/js/bootstrap.bundle.min.js"></script>
+<script src="/w/bs/assets/js/color-modes.js"></script>
+<script src="/w/bs/assets/docs.min.js"></script>
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<hr/>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+<script>
+let curr = window.location.href;
+document.querySelectorAll('.nav-link').forEach(nav => {
+//    console.log(nav.href);
+    nav.classList.remove('active');
+    if (nav.href==curr) nav.classList.add('active');
+});
+
+
+//const o=document.querySelectorAll(".bd-example-offcanvas .offcanvas");
+//o&&o.forEach(e=>{e.addEventListener("show.bs.offcanvas",e=>{e.preventDefault()},!1)})
+
+document.querySelectorAll('#nav-tab>[data-bs-toggle="tab"]').forEach(el => {
+  el.addEventListener('shown.bs.tab', () => {
+    const target = el.getAttribute('data-bs-target')
+    const scrollElem = document.querySelector(`${target} [data-bs-spy="scroll"]`)
+    bootstrap.ScrollSpy.getOrCreateInstance(scrollElem).refresh()
+  })
+});
+
+</script>
+
+</body>
+</html>

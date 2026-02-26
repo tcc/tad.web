@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block header %}
+
+{% include "/inc/head.html" %}
+
+{% endblock %}
+
+{% block content %}
+<div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+
+{% include "/inc/sidebar_qb.html" %}
+
+<main class="bd-main order-1">
+
+<div class="bd-intro pt-0 ps-lg-0">
+{% include "/inc/breadc.html" %}
+</div>
+
+<!--
+    <div class="site-header">
+      <div class="wrapper">
+        <div class="site-nav">
+          <a class="page-link" href="{{relative-path | safe}}archive{{page-suffix}}">Archive</a>
+          <a class="page-link" href="{{relative-path | safe}}tags/index.html">Tags</a>
+          {% if discuss-link %}<a class="page-link" href="{{discuss-link}}">Discuss</a>{% endif %}
+	  <a class="page-link" href="{{relative-path | safe}}atom.xml">
+            Feed
+          </a>
+	  {% if twitter-handle %}
+	  <a class="page-link" href="https://twitter.com/{{twitter-handle}}">
+            Twitter
+          </a>
+	  {% endif %}
+	  {% if about-link %}
+	  <a class="page-link" href="{{about-link}}">About</a>
+	  {% endif %}
+        </div>
+        <div>
+          <h1 class="site-title">
+            <a class="page-link" href="{{relative-path | safe}}index.html">{{blog-title}}</a>
+          </h1>
+	  <p>{{blog-description}}</p>
+        </div>
+      </div>
+    </div>
+-->
+
+<div class="bd-content ps-lg-2">
+
+{{body | safe }}
+
+</div> <!--bd-content -->
+
+</main>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+{% include "/inc/foot.html" %}
+
+{% endblock %}
+

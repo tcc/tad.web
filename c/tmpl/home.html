@@ -1,0 +1,41 @@
+{% extends "base_cm.html" %}
+
+{% block header %}
+
+{% include "/inc/head.html" %}
+ 
+{% endblock %}
+
+{% block content %}
+<div class="container-xxl bd-gutterx mt-3x my-md-4 bd-layout">
+
+{% include "/inc/sidebar.html" %}
+
+<main class="bd-main order-1">
+
+<div class="bd-intro pt-0 ps-lg-0">
+
+{% include "/inc/breadc.html" %}
+
+</div>
+
+
+<div class="bd-content ps-lg-2">
+
+    <div id="main" class="w-full">
+    </div>
+
+</div> <!--bd-content -->
+
+</main>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+{% include "/inc/foot.html" %}
+
+{% endblock %}
+

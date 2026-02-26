@@ -1,0 +1,9 @@
+https://cdn.jsdelivr.net/npm/scittle@0.8.31/dist/scittle.cljs-ajax.min.js
+https://cdn.jsdelivr.net/npm/scittle@0.8.31/dist/scittle.min.js
+https://cdn.jsdelivr.net/npm/scittle@0.8.31/dist/scittle.js-interop.min.js
+https://cdn.jsdelivr.net/npm/scittle@0.8.31/dist/scittle.nrepl.min.js
+https://cdn.jsdelivr.net/npm/scittle@0.8.31/dist/scittle.pprint.min.js
+https://cdn.jsdelivr.net/npm/scittle@0.8.31/dist/scittle.promesa.min.js
+https://cdn.jsdelivr.net/npm/scittle@0.8.31/dist/scittle.re-frame.min.js
+https://cdn.jsdelivr.net/npm/scittle@0.8.31/dist/scittle.reagent.min.js
+https://cdn.jsdelivr.net/npm/scittle@0.8.31/dist/scittle.replicant.min.js
