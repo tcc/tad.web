@@ -15,10 +15,10 @@ Thanks to the ideas from the [Borkent-universe](https://www.youtube.com/watch?v=
 
 **Before:** the original Scittle CodeMirror demo
 	https://babashka.org/scittle/codemirror.html
-	![cm-original](/Users/tcc/wa/tad.web/resources/imgs/cm-original.jpeg)
+	![cm-original](resources/imgs/cm-original.jpeg)
 
 **After:** applying the **Quick Start**
-	![cm-new](/Users/tcc/wa/tad.web/resources/imgs/cm-new.jpeg)
+	![cm-new](resources/imgs/cm-new.jpeg)
 
 * All frontend assets (JS/CSS) are mirrored locally
 * A minimal http-kit server provides a fast, self‑contained runtime
