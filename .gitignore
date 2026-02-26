@@ -8,6 +8,7 @@ pom.xml.asc
 /checkouts/
 /blog/
 /w/
+/.work/
 .DS_Store
 .lein-deps-sum
 .lein-repl-history
