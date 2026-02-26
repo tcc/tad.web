@@ -9,16 +9,18 @@ This project is a lightweight full‑stack system built on [babashka](https://ba
 
 The system builds for working with apps/services likes a shell for OS. 
 
-## From simplicity to on-premise first
+## From simplicity to local first
 
-Thanks to the ideas from the [Borkent-universe](https://www.youtube.com/watch?v=119qVkHxPkM&t=1590s), this project evolves from pure simplicity toward an **on‑premise‑first** model with optional enhancements.
+Thanks to the ideas from the [Borkent-universe](https://www.youtube.com/watch?v=119qVkHxPkM&t=1590s), this project evolves from pure simplicity toward an **local‑first** model with optional enhancements.
 
 **Before:** the original Scittle CodeMirror demo
-	https://babashka.org/scittle/codemirror.html
-	![cm-original](resources/imgs/cm-original.jpeg)
+<br/>
+https://babashka.org/scittle/codemirror.html<br/>
+ ![cm-original](resources/imgs/cm-original.jpeg)
 
 **After:** applying the **Quick Start**
-	![cm-new](resources/imgs/cm-new.jpeg)
+<br/>
+ ![cm-new](resources/imgs/cm-new.jpeg)
 
 * All frontend assets (JS/CSS) are mirrored locally
 * A minimal http-kit server provides a fast, self‑contained runtime
